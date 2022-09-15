@@ -17,5 +17,7 @@ apiRoutes.forEach((route) => {
     app.use(route.path, route.file);
 });
 app.use((req, res, next) => next(noRoute(404)));
-app.listen(process.env.PORT, () => console.log(`->Server is running on ${process.env.PORT}.`));
+app.listen(process.env.PORT, () => {
+    console.log(`->Server is running on ${process.env.PORT}.`);
+});
 module.exports = app;
